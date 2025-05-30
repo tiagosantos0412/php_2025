@@ -1,7 +1,7 @@
 <?php 
     echo 'Hello World! </br>';
     /**
-     * Vasriáveis
+     * Variáveis
      */
 
     $primeiroNome = 'Tiago';
@@ -18,4 +18,15 @@
         $email;
 
     echo $cadastro;
+?>
+
+<?php 
+    /**
+     * Tipos primitivos
+     */
+    //String
+    $texto = 'Exemplo de string'; //tipo string
+    $numeroInteiro = 12; //tipo int 
+    $numeroDecimal = 50.75; //tipo float ou double
+    $booleano = true; //tipo booleano
 ?>
