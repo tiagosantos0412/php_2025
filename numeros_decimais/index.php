@@ -1,7 +1,13 @@
 <?php 
     $altura = 1.75;
     $peso = 103;
-    $imc = $peso / ($altura * $altura);
+    //Arredondamento com a função round()
+    $imc = round($peso / ($altura * $altura), 2);
+    echo '<p>Seu IMC é de: '. $imc.'</p>'; 
 
-    echo 'Seu IMC é de: '. $imc; 
+    //Arredondamento de um numero para baixo com a função floor()
+    echo '<p>Seu IMC arredondado para baixo com floor() é: '. floor($imc).'</p>';
+
+    //Arredondamento de um numero para cima com a função ceil()
+    echo '<p>Seu IMC arredondado para baixo com ceil() é: '. ceil($imc).'</p>';  
 ?>
