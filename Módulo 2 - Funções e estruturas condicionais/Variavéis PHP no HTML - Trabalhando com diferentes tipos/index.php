@@ -4,12 +4,25 @@
     $idade = 38;
     $sexo = 'M';
     $salario = 2210.30;
-    $salarioAnual = $salario * 12;
-    $statusDeEmprego = true;
+    $salario_anual = $salario * 12;
+    $status_emprego = true;
+    $idade_aposentadoria = null;
+    $situacao_trabalhista = null;
     $Habilidades = ['PHP', 'JavaScript', 'HTML', 'CSS'];
 
+    if($status_emprego){
+        $situacao_trabalhista = 'Empregado';
+    }
+    else {
+        $situacao_trabalhista=  'Desempregado';
+    }
 
-
+    if($sexo === 'm' || $sexo === 'M'){
+        $idade_aposentadoria = 65;
+    }
+    elseif($sexo === 'f' || $sexo === 'F'){
+        $idade_aposentadoria = 62;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -66,29 +79,9 @@
             <p>Idade: <strong><?=$idade;?></strong></p>
             <p>Sexo: <strong><?=$sexo;?></strong></p>
             <p>Salário Mensal: <strong><?=$salario;?></strong></p>
-            <p>Salário Anual: <strong><?=$salarioAnual?></strong></p>
-            <p>Status de Emprego: <strong>
-                <?php
-                    if($statusDeEmprego === true){
-                        echo 'Empregado';
-                    }
-                    else {
-                        echo 'Desempregado';
-                    } 
-                ?>
-            </strong></p>
-            <p>Anos para Aposentadoria: <strong>
-                <?php
-                    $idade_aposentadoria = null;
-                    if($sexo === 'm' || $sexo === 'M'){
-                        $idade_aposentadoria = 65;
-                    }
-                    elseif($sexo === 'f' || $sexo === 'F'){
-                        $idade_aposentadoria = 62;
-                    }
-                    echo  $idade_aposentadoria - $idade
-                ?>
-            </strong></p>
+            <p>Salário Anual: <strong><?=$salario_anual;?></strong></p>
+            <p>Status de Emprego: <strong><?=$situacao_trabalhista;?></strong></p>  
+            <p>Anos para Aposentadoria: <strong><?=$idade_aposentadoria - $idade;?></strong></p>
             <p>Habilidades: <strong>
                 <?= 
                     implode(', ', $Habilidades);
