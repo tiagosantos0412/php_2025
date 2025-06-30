@@ -5,21 +5,15 @@
     $sexo = 'M';
     $salario = 2210.30;
     $salario_anual = $salario * 12;
-    $status_emprego = true;
     $idade_aposentadoria = null;
-    $situacao_trabalhista = null;
+    $situacao_trabalhista = true;
     $Habilidades = ['PHP', 'JavaScript', 'HTML', 'CSS'];
 
     //Definindo constantes
     define('IDADE_APOSENTADORIA_MASCULINA', 65);
     define('IDADE_APOSENTADORIA_FEMININA', 62);
-
-    if($status_emprego){
-        $situacao_trabalhista = 'Empregado';
-    }
-    else {
-        $situacao_trabalhista=  'Desempregado';
-    }
+    //Operador ternário
+    $situacao_trabalhista = $situacao_trabalhista == true ? 'Empregado' : 'Desempregado';
 
     if($sexo === 'm' || $sexo === 'M'){
         $idade_aposentadoria = IDADE_APOSENTADORIA_MASCULINA;
