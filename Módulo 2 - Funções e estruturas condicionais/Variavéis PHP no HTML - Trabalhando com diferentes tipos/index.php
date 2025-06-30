@@ -10,6 +10,10 @@
     $situacao_trabalhista = null;
     $Habilidades = ['PHP', 'JavaScript', 'HTML', 'CSS'];
 
+    //Definindo constantes
+    define('IDADE_APOSENTADORIA_MASCULINA', 65);
+    define('IDADE_APOSENTADORIA_FEMININA', 62);
+
     if($status_emprego){
         $situacao_trabalhista = 'Empregado';
     }
@@ -18,10 +22,10 @@
     }
 
     if($sexo === 'm' || $sexo === 'M'){
-        $idade_aposentadoria = 65;
+        $idade_aposentadoria = IDADE_APOSENTADORIA_MASCULINA;
     }
     elseif($sexo === 'f' || $sexo === 'F'){
-        $idade_aposentadoria = 62;
+        $idade_aposentadoria = IDADE_APOSENTADORIA_FEMININA;
     }
     
 ?>
