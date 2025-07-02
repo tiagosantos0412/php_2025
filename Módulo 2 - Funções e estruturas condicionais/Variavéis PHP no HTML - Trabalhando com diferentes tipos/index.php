@@ -1,27 +1,5 @@
 <?php 
-    $titulo = 'Ficha Cadastral';
-    $nome = 'João Silva';
-    $idade = 38;
-    $sexo = 'M';
-    $salario = 2210.30;
-    $salario_anual = $salario * 12;
-    $idade_aposentadoria = null;
-    $situacao_trabalhista = true;
-    $Habilidades = ['PHP', 'JavaScript', 'HTML', 'CSS'];
-
-    //Definindo constantes
-    define('IDADE_APOSENTADORIA_MASCULINA', 65);
-    define('IDADE_APOSENTADORIA_FEMININA', 62);
-    //Operador ternário
-    $situacao_trabalhista = $situacao_trabalhista == true ? 'Empregado' : 'Desempregado';
-
-    if($sexo === 'm' || $sexo === 'M'){
-        $idade_aposentadoria = IDADE_APOSENTADORIA_MASCULINA;
-    }
-    elseif($sexo === 'f' || $sexo === 'F'){
-        $idade_aposentadoria = IDADE_APOSENTADORIA_FEMININA;
-    }
-    
+    require('src/includes/data.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
