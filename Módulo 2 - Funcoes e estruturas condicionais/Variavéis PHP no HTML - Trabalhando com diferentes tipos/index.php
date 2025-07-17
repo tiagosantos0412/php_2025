@@ -1,5 +1,7 @@
 <?php 
+    require('src/includes/constants.php');
     require('src/includes/data.php');
+    require('src/includes/functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,10 +20,10 @@
             <p>Nome: <strong><?=$nome;?></strong></p>
             <p>Idade: <strong><?=$idade;?></strong></p>
             <p>Sexo: <strong><?=$sexo;?></strong></p>
-            <p>Salário Mensal: <strong>R$ <?=number_format($salario, 2,',','.');?></strong></p>
-            <p>Salário Anual: <strong>R$ <?=number_format($salario_anual, 2,',','.');?></strong></p>
+            <p>Salário Mensal: <strong>R$ <?=converterNumeroEmMoedaBr($salario);?></strong></p>
+            <p>Salário Anual: <strong>R$ <?= calcularSalarioAnual($salario);?></strong></p>
             <p>Status de Emprego: <strong><?=$situacao_trabalhista;?></strong></p>  
-            <p>Anos para Aposentadoria: <strong><?=$idade_aposentadoria - $idade;?></strong></p>
+            <p>Anos para Aposentadoria: <strong><?=anosAposentadoria($idade, $sexo);?></strong></p>
             <p>Habilidades: <strong>
                 <?= 
                     implode(', ', $Habilidades);
